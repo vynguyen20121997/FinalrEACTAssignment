@@ -27,7 +27,6 @@ const Navbar = () => {
             <li><Link to='/'> Home</Link></li>
             <li><Link to='/product'> Product</Link></li>
             <li><Link to='/cart'> Cart</Link></li>
-            <li><Link to='/shipping'> Tracking Order</Link></li>
           </ul>
 
         </div>
@@ -49,10 +48,10 @@ const Navbar = () => {
           </div>
 
 
-          <div className='right-row'>
+          {/* <div className='right-row'>
             <button> ENG</button>
             <button>VIE</button>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

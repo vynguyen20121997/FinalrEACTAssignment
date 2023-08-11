@@ -8,8 +8,20 @@ import "./styleproductpage.css";
 import Carosel from './Carosel';
 
 const Items = (props) => {
-  // const [itemList, setItemList] = useState(PRODUCT);
 
+
+  const bankok = PRODUCT.filter(function (value, index) {
+    return value.categorie == "BANGKOK";
+  })
+  const sea = PRODUCT.filter(function (value, index) {
+    return value.categorie == "SEAFOOD";
+  })
+  const meat = PRODUCT.filter(function (value, index) {
+    return value.categorie == "MEAT";
+  })
+  const kid = PRODUCT.filter(function (value, index) {
+    return value.categorie == "KID";
+  })
 
 
   return (
@@ -20,19 +32,59 @@ const Items = (props) => {
 
         <h1 style={{ color: "rgb(0, 128, 128)", }}>PIZZA COLLECTION</h1>
 
-        <div style={{marginTop:"5%", marginBottom:"5%"}}>  
-       </div>
-       {/* <Carosel/> */}
-        <div >
+
+
+
+
+        <h3 style={{ color: "rgb(0, 128, 128)", }}> BANGKOK PIZZA</h3>
+
+        <div  >
           <ul >
             <li className='productdisplay' >
-              {PRODUCT.map((product) => (<Item data={product} />))}
+              {bankok.map((product) => {
+                return <Item data={product} />
+              })}
             </li>
           </ul>
         </div>
 
-      </div>
-    </>
+
+        <h3 style={{ color: "rgb(0, 128, 128)", }}>SEAFOOD PIZZA</h3>
+        <div>
+          <ul >
+            <li className='productdisplay' >
+              {sea.map((product) => {
+                return <Item data={product} />
+              })}
+            </li>
+          </ul>
+        </div>
+
+        <h3 style={{ color: "rgb(0, 128, 128)", }}>MEAT PIZZA</h3>
+
+        <div >
+          <ul >
+            <li className='productdisplay' >
+              {meat.map((product) => {
+                return <Item data={product} />
+              })}
+            </li>
+          </ul>
+        </div>
+
+        <h3 style={{ color: "rgb(0, 128, 128)", }}>KID</h3>
+
+        <div >
+          <ul >
+            <li className='productdisplay' >
+              {kid.map((product) => {
+                return <Item data={product} />
+              })}
+            </li>
+          </ul>
+        </div>
+
+      </div >  </>
   )
 };
 

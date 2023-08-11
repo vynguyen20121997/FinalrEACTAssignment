@@ -52,14 +52,14 @@ const navigate = useNavigate();
 
                     <h4 style={{ marginBottom: "0" }}>Contact</h4>
                     <div className="inputcard">
-                        <TextField id="cusName" name="cusName" value={cus.cusName} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="Name" variant="standard" />
+                        <TextField id="cusName" name="cusName" value={cus.cusName} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="cusName" variant="standard" />
                         <br />
-                        <TextField id="cusPhone" name="cusPhone" value={cus.cusPhone} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="Phone Number" variant="standard" />
+                        <TextField id="cusPhone" name="cusPhone" value={cus.cusPhone} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="cusPhone" variant="standard" />
                         <br />
-                        <TextField id="cusAdress" name="cusAdress" value={cus.cusAdress} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="Address" variant="standard" />
+                        <TextField id="cusAdress" name="cusAdress" value={cus.cusAdress} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="cusAdress" variant="standard" />
                     </div>
 
-                    <div className="inputcard" style={{ padding: "0", marginTop: "50px" }}>
+                    {/* <div className="inputcard" style={{ padding: "0", marginTop: "50px" }}>
                         <h4 style={{ marginBottom: "0" }}>Paying Menthod</h4>
                         <div>
                             <TextField style={{ marginTop: "2%", width: "90%" }} id="standard-basic" label="Card Holder Name" variant="standard" />
@@ -70,14 +70,12 @@ const navigate = useNavigate();
                             <TextField focused type="date" style={{ width: "40%" }} id="standard-basic" label="Expiration" variant="standard" />
                             <TextField style={{ width: "40%", marginLeft: "10%" }} id="standard-basic" label="Cvv" variant="standard" />
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
-                <Button onClick={() => {navigate("/shipping", {
-                    state:cus
-                })
-
-            }}> CONFIRM </Button>
+                <Button 
+                    color="primary" type="submit" onClick={(e) => {navigate("/shipping", {state:cus })}}
+                    > CONFIRM </Button>
 
             </form>
 

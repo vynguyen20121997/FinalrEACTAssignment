@@ -17,8 +17,7 @@
     height: 50px;
     color: rgb(0, 128, 128);
     margin-top: -16px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
 };
 
 
@@ -30,4 +29,5 @@
 .productdisplay{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }

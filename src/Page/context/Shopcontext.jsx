@@ -11,12 +11,12 @@ export const ShopContextProvider = (props) => {
   const [cartItem, setCartItem] = useState([]);
 
 
-  const addToCart = ({ name, price, id }) => {
+  const addToCart = ({ name, price, id, img }) => {
     const products = [...cartItem];
     const itemIndex = products.findIndex(i => i.id === id)
     console.log(itemIndex);
     if (itemIndex === -1) {
-      setCartItem([...products, { id, name, price, quantity: 1, }])
+      setCartItem([...products, { id, name, price, quantity: 1, img }])
     } else {
       products[itemIndex].quantity += 1;
       setCartItem(products)
@@ -24,7 +24,7 @@ export const ShopContextProvider = (props) => {
   };
 
 
-  const removeToCart = ({ id, name, price, quantity }) => {
+  const removeToCart = ({ id, name, price, quantity, img }) => {
     const products = [...cartItem];
     const itemIndex = products.findIndex(i => i.id === id)
     if (products[itemIndex].quantity <= 0) {
