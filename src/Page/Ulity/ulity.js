@@ -21,7 +21,7 @@ export const PRODUCT = [
     categorie:"BANGKOK"
   },
   {
-    name: "PIZZA SURF & TURF X-SMALL",
+    name: "PIZZA SURF & TURF S",
     price: "25",
     id: "4",
     categorie:"SEAFOOD",

@@ -1,26 +1,11 @@
 import React, { useState } from 'react'
 import { Button, Table } from '@mui/material';
 import DataPopup from './DataPopup';
+import { Link } from 'react-router-dom';
 
 
-// const ExempleData = 
-//     {
-
-//     }
-// ;
 const Shippingpage = (props) => {
-    // const [ cusData, SetCusData ] = useState({
-    //     cusName: "",
-    //     cusPhone: "",
-    //     cusAdress: "",
-    // })
 
-
-    // console.log("cusdata:", cusData)
-
-
-   
-    
     return (
         <div style={{ backgroundColor: "grey", height: "500px" }}>
             <div style={{ marginLeft: "10%", backgroundColor: "white", width: "80%", padding: "20px", height: "400px" }}>
@@ -32,11 +17,9 @@ const Shippingpage = (props) => {
                     <Button variant="contained" color="success">VIEW ORDER STATUS</Button>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-around", marginTop: "0" }}>
-
-                   <DataPopup />
-
+                    <DataPopup />
                 </div>
-                <Button style={{ marginTop: "2%" }} variant="contained" color="error">CLOSE</Button>
+                <Link to="/" ><Button style={{ marginTop: "5%" }} variant="contained" color="error">CLOSE</Button></Link>
             </div>
         </div>
     )

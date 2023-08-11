@@ -48,8 +48,6 @@ const navigate = useNavigate();
             <form onSubmit={onSubmitHander}>
                 <div className="carttype" style={{ padding: "0", marginTop: "10px" }}>
 
-
-
                     <h4 style={{ marginBottom: "0" }}>Contact</h4>
                     <div className="inputcard">
                         <TextField id="cusName" name="cusName" value={cus.cusName} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="cusName" variant="standard" />
@@ -58,30 +56,12 @@ const navigate = useNavigate();
                         <br />
                         <TextField id="cusAdress" name="cusAdress" value={cus.cusAdress} onChange={onChangeHandler} required style={{ marginTop: "2%", width: "90%" }} label="cusAdress" variant="standard" />
                     </div>
-
-                    {/* <div className="inputcard" style={{ padding: "0", marginTop: "50px" }}>
-                        <h4 style={{ marginBottom: "0" }}>Paying Menthod</h4>
-                        <div>
-                            <TextField style={{ marginTop: "2%", width: "90%" }} id="standard-basic" label="Card Holder Name" variant="standard" />
-                            <br />
-                            <TextField style={{ marginTop: "2%", width: "90%" }} id="standard-basic" label="Card Number" variant="standard" />
-                        </div>
-                        <div className="ex" style={{ display: "flex", marginTop: "2%", justifyContent: "center" }}>
-                            <TextField focused type="date" style={{ width: "40%" }} id="standard-basic" label="Expiration" variant="standard" />
-                            <TextField style={{ width: "40%", marginLeft: "10%" }} id="standard-basic" label="Cvv" variant="standard" />
-                        </div>
-                    </div> */}
-
                 </div>
                 <Button 
                     color="primary" type="submit" onClick={(e) => {navigate("/shipping", {state:cus })}}
                     > CONFIRM </Button>
-
             </form>
-
             <div>
-                <UserContext.Provider value={cus}>
-                </UserContext.Provider>
             </div>
 
         </>
