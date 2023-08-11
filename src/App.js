@@ -26,10 +26,8 @@ function App() {
           <Routes>
           <Route path="/" element={<Homepage />}/>
             <Route path="/product" element={<Items />} />
-<UserContext.Provider value={cus} >
             <Route path="/cart" element={<Cart />}/>
             <Route path="/shipping" element={<Shippingpage />}/>
-</UserContext.Provider>
           </Routes>
           <Footers/>
         </BrowserRouter>

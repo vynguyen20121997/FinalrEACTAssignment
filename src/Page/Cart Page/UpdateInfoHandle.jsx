@@ -1,6 +1,7 @@
 import React from 'react'
-import { useEffect, useState,createContext } from "react";
+import { useEffect, useState, createContext } from "react";
 import { Button, InputLabel, TextField, Select, MenuItem, FormControl } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -23,9 +24,11 @@ const initialState = {
 export const UserContext = createContext()
 
 
- const UpdateInfoHandle = (props) => {
+const UpdateInfoHandle = (props) => {
     const [cus, setCus] = useState(initialState);
-   
+
+const navigate = useNavigate();
+
     const onChangeHandler = (e) => {
         const { name, value } = e.target;
         setCus({
@@ -33,7 +36,7 @@ export const UserContext = createContext()
             [name]: value,
         });
     };
-console.log("hehe:",cus )
+    console.log("hehe:", cus)
     const onSubmitHander = (event) => {
 
         return
@@ -70,12 +73,16 @@ console.log("hehe:",cus )
                     </div>
 
                 </div>
-                <ButtonConfirm />
+                <Button onClick={() => {navigate("/shipping", {
+                    state:cus
+                })
+
+            }}> CONFIRM </Button>
 
             </form>
 
             <div>
-                <UserContext.Provider value={cus}> 
+                <UserContext.Provider value={cus}>
                 </UserContext.Provider>
             </div>
 

@@ -2,13 +2,15 @@ import React from 'react'
 import { Button, Table } from '@mui/material';
 import { useContext } from 'react'
 import { UserContext } from '../Cart Page/UpdateInfoHandle';
+import { useLocation } from 'react-router-dom';
 
 
 const DataPopup = (props) => {
     const { cusName, cusAdress, cusPhone } = props;
-    const { cus } = useContext(UserContext)
+    const location = useLocation()
+    console.log("saukhitruyen:", location)
 
-    console.log("saukhitruyen:", cus)
+    const cusDta = location.state;
     return (
         <>
             <div style={{ display: "flex", justifyContent: "space-around", marginTop: "2%" }}>
@@ -34,31 +36,29 @@ const DataPopup = (props) => {
                     </tbody>
                 </Table>
 
-                <UserContext.Consumer>
-                    {(cus) => {
-                        <Table style={{ width: "300px" }}>
-                            <thead>
-                                <tr>
-                                    <th colSpan={2}>SHIPPING DETAIL</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>{cus.cusName}</td>
-                                </tr>
-                                <tr>
-                                    <td>Address:</td>
-                                    <td>{cus.cusAdress}</td>
-                                </tr>
-                                <tr>
-                                    <td>Phone Number:</td>
-                                    <td>{cus.cusPhone}</td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    }}
-                </UserContext.Consumer>
+
+
+                <Table style={{ width: "300px" }}>
+                    <thead>
+                        <tr>
+                            <th colSpan={2}>SHIPPING DETAIL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{cusDta.cusName}</td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>{cusDta.cusAdress}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number:</td>
+                            <td>{cusDta.cusPhone}</td>
+                        </tr>
+                    </tbody>
+                </Table>
 
             </div>
         </>
